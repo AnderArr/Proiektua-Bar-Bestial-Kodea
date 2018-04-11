@@ -8,5 +8,5 @@ public class FokaKarta extends Karta{
 	
 	public void gaitasunaBurutu(){
 	
-	}
+	}//proba
 }
