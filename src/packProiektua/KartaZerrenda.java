@@ -51,4 +51,17 @@ public class KartaZerrenda {
 	public void kartaEzabatu(Karta k1){
 		this.kartaZerrenda.remove(k1);
 	}
+	
+	public void hasieranJarri(Karta k1){
+		this.kartaZerrenda.add(0, k1);
+	}
+	
+	public void elkartrukatu (Karta k1, Karta k2, int pos1, int pos2){
+		this.kartaZerrenda.set(pos2, k1);
+		this.kartaZerrenda.set(pos1, k2);
+	}
+	
+	public int posizioaLortu(Karta k1){
+		return this.kartaZerrenda.indexOf(k1);
+	}
 }
