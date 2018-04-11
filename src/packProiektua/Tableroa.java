@@ -58,37 +58,6 @@ public class Tableroa {
 		return nireTableroa;
 	}
 	
-	private void sortuBaraja(String pKolorea,KartaZerrenda b1){
-		KartaFactory kf=KartaFactory.getKartaFactory();
-		
-		Karta k1=kf.createKarta("Mofeta", pKolorea);
-		Karta k2=kf.createKarta("Loroa", pKolorea);
-		Karta k3=kf.createKarta("Kanguroa", pKolorea);
-		Karta k4=kf.createKarta("Tximinoa", pKolorea);
-		Karta k5=kf.createKarta("Kamalehoia", pKolorea);
-		Karta k6=kf.createKarta("Foka", pKolorea);
-		Karta k7=kf.createKarta("Zebra", pKolorea);
-		Karta k8=kf.createKarta("Jirafa", pKolorea);
-		Karta k9=kf.createKarta("Sugea", pKolorea);
-		Karta k10=kf.createKarta("Krokodiloa", pKolorea);
-		Karta k11=kf.createKarta("Hipopotamoa", pKolorea);
-		Karta k12=kf.createKarta("Lehoia", pKolorea);
-		
-		b1.kartaGehitu(k1);
-		b1.kartaGehitu(k2);
-		b1.kartaGehitu(k3);
-		b1.kartaGehitu(k4);
-		b1.kartaGehitu(k5);
-		b1.kartaGehitu(k6);
-		b1.kartaGehitu(k7);
-		b1.kartaGehitu(k8);
-		b1.kartaGehitu(k9);
-		b1.kartaGehitu(k10);
-		b1.kartaGehitu(k11);
-		b1.kartaGehitu(k12);
-		
-		b1.barajatu();		
-	}
 	
 	private void sortuEskua(KartaZerrenda e1,KartaZerrenda b1){
 		
