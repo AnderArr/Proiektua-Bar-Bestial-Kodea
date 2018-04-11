@@ -1,6 +1,7 @@
 package packProiektua;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class KartaZerrenda {
 	
@@ -41,7 +42,13 @@ public class KartaZerrenda {
 		return kartaZerrenda.size();
 	}
 	public Karta getKarta(int i){
-	
 		return this.kartaZerrenda.get(i);
+	}
+	public Iterator<Karta> getIteradorea(){
+		return this.kartaZerrenda.iterator();
+	}
+	
+	public void kartaEzabatu(Karta k1){
+		this.kartaZerrenda.remove(k1);
 	}
 }
