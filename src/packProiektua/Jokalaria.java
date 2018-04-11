@@ -1,8 +1,8 @@
 package packProiektua;
 
 public class Jokalaria {
-	private KartaZerrenda eskuan;
-	private KartaZerrenda baraja;
+	protected KartaZerrenda eskuan;
+	protected KartaZerrenda baraja;
 	
 	public Jokalaria(){
 		this.baraja= new KartaZerrenda();
@@ -67,5 +67,7 @@ public void jokalariaHasieratu(String pKolorea){
 	this.sortuBaraja(pKolorea);
 	this.sortuEskua();
 }
+
+public void kartaMahairaBota(){}
 
 }

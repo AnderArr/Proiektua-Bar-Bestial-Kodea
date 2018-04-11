@@ -38,4 +38,5 @@ public class TableroaTest {
 			System.out.println(t.getEskuanCPU().getKarta(i).getIzena());
 		}
 	}
+
 }

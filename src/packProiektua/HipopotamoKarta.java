@@ -9,4 +9,6 @@ public class HipopotamoKarta extends Karta{
 	public void gaitasunaBurutu(){
 		
 	}
+	
+
 }

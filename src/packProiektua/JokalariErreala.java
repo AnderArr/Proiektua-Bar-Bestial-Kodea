@@ -5,4 +5,8 @@ public class JokalariErreala extends Jokalaria {
 	public JokalariErreala(){
 		super();
 	}
+	
+	public void kartaMahairaBota(){
+		
+	}
 }

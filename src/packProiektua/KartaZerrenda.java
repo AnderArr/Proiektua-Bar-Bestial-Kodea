@@ -1,6 +1,5 @@
 package packProiektua;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Collections;
 
 public class KartaZerrenda {
@@ -24,11 +23,6 @@ public class KartaZerrenda {
 			this.kartaKop--;
 		}
 	}
-	
-	public void kartaEzabatu(Karta k1){
-		this.kartaZerrenda.remove(k1);
-		this.kartaKop--;
-	}
 
 	public Karta kartaHartu(){
 		Karta k=null;
@@ -43,16 +37,11 @@ public class KartaZerrenda {
 	public void barajatu(){
 		Collections.shuffle(this.kartaZerrenda);
 	}
-	
 	public int luzera(){
 		return kartaZerrenda.size();
 	}
-	
 	public Karta getKarta(int i){
-		return this.kartaZerrenda.get(i);
-	}
 	
-	public Iterator<Karta> getIteradorea(){
-		return this.kartaZerrenda.iterator();
+		return this.kartaZerrenda.get(i);
 	}
 }

@@ -41,4 +41,5 @@ public class KartaFactory {
 		}
 		return nireKarta;
 	}
+
 }

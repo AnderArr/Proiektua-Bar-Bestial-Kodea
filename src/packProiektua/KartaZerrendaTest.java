@@ -80,4 +80,6 @@ public class KartaZerrendaTest {
 		kz.kartaGehitu(kf.createKarta("Loroa", "Gorria"));
 		assertTrue(kz.luzera()==5);
 	}
+
+
 }

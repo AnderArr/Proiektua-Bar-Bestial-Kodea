@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 public class TableroaFrame extends JFrame {
 
 	private JPanel contentPane;
+
 	
 	/**
 	 * Launch the application.
@@ -85,7 +86,9 @@ public class TableroaFrame extends JFrame {
 			s8="Ez dago.";
 			s9="Ez dago.";
 		}
-							
+					
+					
+				
 		JButton btnKarta_0 = new JButton(s6);
 		btnKarta_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -94,13 +97,24 @@ public class TableroaFrame extends JFrame {
 		btnKarta_0.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnKarta_0.setBounds(new Rectangle(100, 100, 100, 5000));
 		
+		
+		
+		
+		
 		JButton btnKarta_1 = new JButton(s7);
 		btnKarta_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-				
+		
+		
+		
+		
+		
+		
+		
 		btnKarta_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		
 		
 		JButton btnKarta_2 = new JButton(s8);
 		btnKarta_2.addActionListener(new ActionListener() {
@@ -117,12 +131,16 @@ public class TableroaFrame extends JFrame {
 		});
 		btnKarta_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
+		
 		ButtonGroup grupo = new ButtonGroup();
 		grupo.add(btnKarta_0);
 		grupo.add(btnKarta_1);
 		grupo.add(btnKarta_2);
 		grupo.add(btnKarta_3);
 		
+		
+		
+				
 		contentPane.setLayout(new BorderLayout(0, 0));
 		pane.setLayout(new FlowLayout());
 		contentPane.add(pane, BorderLayout.SOUTH);
@@ -205,4 +223,5 @@ public class TableroaFrame extends JFrame {
 		pane4.add(jl7);
 		
 	}
+
 }
