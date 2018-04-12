@@ -67,6 +67,9 @@ public void jokalariaHasieratu(String pKolorea){
 	this.sortuBaraja(pKolorea);
 	this.sortuEskua();
 }
+public void kartaBarajatikHartu(){
+	this.eskuan.kartaGehitu(this.baraja.kartaHartu());
+}
 
 public void kartaMahairaBota(){}
 
