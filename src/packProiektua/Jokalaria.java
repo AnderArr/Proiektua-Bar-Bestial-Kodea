@@ -39,8 +39,6 @@ public class Jokalaria {
 		baraja.kartaGehitu(k12);
 		
 		baraja.barajatu();
-		
-		
 	}
 	
 	public KartaZerrenda getBaraja(){
@@ -51,8 +49,7 @@ public class Jokalaria {
 		return this.eskuan;
 	}
 	
-private void sortuEskua(){
-		
+	private void sortuEskua(){
 		Karta k1=baraja.kartaHartu();
 		Karta k2=baraja.kartaHartu();
 		Karta k3=baraja.kartaHartu();
@@ -60,14 +57,19 @@ private void sortuEskua(){
 		eskuan.kartaGehitu(k1);
 		eskuan.kartaGehitu(k2);
 		eskuan.kartaGehitu(k3);
-		eskuan.kartaGehitu(k4);
-		
+		eskuan.kartaGehitu(k4);	
 	}
-public void jokalariaHasieratu(String pKolorea){
-	this.sortuBaraja(pKolorea);
-	this.sortuEskua();
+	
+	public void jokalariaHasieratu(String pKolorea){
+		this.sortuBaraja(pKolorea);
+		this.sortuEskua();
 }
 
-public void kartaMahairaBota(){}
+	public void kartaMahairaBota(){
 
+	}
+
+	public void kartaBarajatikHartu(){
+		this.eskuan.kartaGehitu(this.baraja.kartaHartu());
+	}
 }

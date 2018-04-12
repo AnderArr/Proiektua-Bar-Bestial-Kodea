@@ -15,8 +15,8 @@ public class HipopotamoKarta extends Karta{
 			while((aux.getBalioa()<this.balioa)&&(!aux.getIzena().equals("Zebra")&&(!irten))){
 				kZ.elkartrukatu(aux, this, kZ.posizioaLortu(aux), kZ.posizioaLortu(this));
 				int ind =kZ.posizioaLortu(this);
-				if (ind<1){
-					aux=kZ.getKarta(ind);
+				if (ind>1){
+					aux=kZ.getKarta(ind-1);
 				} else {
 					irten=true;
 				}
