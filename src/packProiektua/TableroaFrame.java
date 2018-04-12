@@ -92,6 +92,7 @@ public class TableroaFrame extends JFrame {
 		JButton btnKarta_0 = new JButton(s6);
 		btnKarta_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		btnKarta_0.setFont(new Font("Tahoma", Font.PLAIN, 20));

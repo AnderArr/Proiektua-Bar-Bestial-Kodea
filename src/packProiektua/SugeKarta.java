@@ -8,8 +8,8 @@ public class SugeKarta extends Karta{
 	}
 	
 	public void gaitasunaBurutu(){
+		Tableroa t= Tableroa.getNireTableroa();
+		KartaZerrenda kZ = t.getKola();
 		
 	}
-	
-
 }
