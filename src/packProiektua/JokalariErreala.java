@@ -6,7 +6,10 @@ public class JokalariErreala extends Jokalaria {
 		super();
 	}
 	
-	public void kartaMahairaBota(){
-		
+	public void kartaMahairaBota(int pPos){
+		Tableroa t= Tableroa.getNireTableroa();
+		Karta k= this.eskuan.getKarta(pPos);
+		this.eskuan.kartaEzabatu(k);
+		t.getKola().kartaGehitu(k);
 	}
 }
