@@ -8,8 +8,10 @@ public class LoroKarta extends Karta{
 	}
 	
 	public void gaitasunaBurutu(){
-		
+		Tableroa t= Tableroa.getNireTableroa();
+		KartaZerrenda kZ = t.getKola();
+		String galdera="Zer karta kendu nahi duzu mahaitik?";
+		int pos = kZ.galdetu(galdera);
+		kZ.kartaKendu(pos);
 	}
-	
-
 }

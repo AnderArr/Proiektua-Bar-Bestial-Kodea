@@ -64,4 +64,14 @@ public class KartaZerrenda {
 	public int posizioaLortu(Karta k1){
 		return this.kartaZerrenda.indexOf(k1);
 	}
+	
+	public int galdetu(String pGaldera){
+		System.out.println(pGaldera);
+		int aux=0;
+		return aux;
+	}
+	
+	public void kartaPosizioanGehitu(int ind, Karta pKarta){
+		this.kartaZerrenda.add(ind, pKarta);
+	}
 }

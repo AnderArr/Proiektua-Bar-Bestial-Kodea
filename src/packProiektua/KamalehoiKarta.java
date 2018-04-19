@@ -8,8 +8,18 @@ public class KamalehoiKarta extends Karta{
 	}
 	
 	public void gaitasunaBurutu(){
-		
+		Tableroa t= Tableroa.getNireTableroa();
+		KartaZerrenda kZ = t.getKola();
+		String galdera="Mahaiko zer kartaren itxura hartu nahi duzu?";
+		int pos=kZ.galdetu(galdera);
+		Karta aux = kZ.getKarta(pos);
+		KartaFactory kF = KartaFactory.getKartaFactory();
+		Karta k = kF.createKarta(aux.getIzena(), this.getKolorea());
+		kZ.kartaEzabatu(this);
+		kZ.kartaGehitu(k);
+		k.gaitasunaBurutu();
+		pos = kZ.posizioaLortu(k);
+		kZ.kartaEzabatu(k);
+		kZ.kartaPosizioanGehitu(pos, this);
 	}
-	
-
 }

@@ -36,6 +36,9 @@ public abstract class Karta {
 	public String getDeskribapena(){
 		return this.deskribapena;
 	}
+	public boolean getErrepikatu(){
+		return this.errepikatu;
+	}
 	
 	
 
