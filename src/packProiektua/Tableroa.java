@@ -1,9 +1,9 @@
 package packProiektua;
 
+import java.util.Observable;
 
 
-
-public class Tableroa {
+public class Tableroa extends Observable{
 	private JokalariErreala J1;
 	private CPUJokalaria CPU;
 	private KartaZerrenda kola;
@@ -19,6 +19,10 @@ public class Tableroa {
 		sartuakCPU=new KartaZerrenda();
 		
 	}
+	public JokalariErreala getJokalaria(){
+		return J1;
+	}
+	
 	public KartaZerrenda getJ1(){
 		return this.J1.getBaraja();
 	}
@@ -45,6 +49,73 @@ public class Tableroa {
 			nireTableroa=new Tableroa();
 		}
 		return nireTableroa;
+	}
+	
+	public void txandaJokatu(int pos){
+		    J1.kartaMahairaBota(pos);
+		    J1.kartaBarajatikHartu();
+		    animaladaRekurrenteak();
+		    this.kolaEguneratu();
+			CPU.kartaMahairaBota();
+			CPU.kartaBarajatikHartu();
+			animaladaRekurrenteak();
+			this.kolaEguneratu();
+			notifyObservers();
+	}
+	
+	
+	public void animaladaRekurrenteak(){
+		for(int i=0;i<this.kola.luzera();i++){
+			Karta k= this.kola.getKarta(i);
+			if (k.getErrepikatu()){
+				k.gaitasunaBurutu();
+			}
+		}
+	}
+	
+	public boolean bukatuta(){
+		return ((this.J1.getEskuan().luzera()==0)&&(this.CPU.getEskuan().luzera()==0));
+	}
+	
+	public void kolaEguneratu(){
+		this.kola.kartaKendu(4);
+		Karta k1= this.kola.kartaHartu();
+		Karta k2= this.kola.kartaHartu();
+		this.sartuBereLekuan(k1);
+		this.sartuBereLekuan(k2);
+		
+	}
+	
+	public String irabazleaLortu(){
+		int punt1=0;
+		int punt2=0;
+		for(int i=0;i<this.sartuakJ1.luzera();i++){
+			punt1=punt1+this.sartuakJ1.getKarta(i).getBalioa();
+		}
+		for(int j=0;j<this.sartuakCPU.luzera();j++){
+			punt2=punt2+this.sartuakCPU.getKarta(j).getBalioa();
+		}
+		if (punt1>punt2){
+			return "J1";
+		}
+		else{
+			if(punt1<punt2){
+				return "CPU";
+			}
+			else{
+				return "Berdinketa egon da";
+			}
+		}
+		
+	}
+	
+	
+	public void sartuBereLekuan(Karta k1){
+		if(k1.getKolorea().equals("Urdina")){
+			this.sartuakJ1.kartaGehitu(k1);
+		}else{
+			this.sartuakCPU.kartaGehitu(k1);
+		}
 	}
 	
 	
