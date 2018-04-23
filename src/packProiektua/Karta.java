@@ -1,6 +1,7 @@
 package packProiektua;
 
-public abstract class Karta {
+public abstract class Karta implements InterfaceAnimalada{
+	protected InterfaceAnimalada ia;
 	protected int zenbakia;
 	protected String izena;
 	protected boolean errepikatu;
@@ -16,10 +17,6 @@ public abstract class Karta {
 		this.kolorea=pKolorea;
 		this.deskribapena=pDeskribapena;
 		this.zenbakia=pZenbakia;
-	}
-	
-	public void gaitasunaBurutu(int pErabiltzailea){
-		
 	}
 	
 	public String getIzena(){
@@ -42,8 +39,9 @@ public abstract class Karta {
 		return this.deskribapena;
 	}
 	
-	public boolean getErrepikatu(){
-		return this.errepikatu;
+	public  boolean  getErrepikatu () {
+			 return  this.errepikatu;
 	}
 	
+
 }
