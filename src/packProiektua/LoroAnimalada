@@ -1,0 +1,14 @@
+package packProiektua;
+
+public class LoroAnimalada implements InterfaceAnimalada {
+
+	public LoroAnimalada(){}
+	@Override
+	public void gaitasunaBurutu(int pos) {
+		Tableroa t= Tableroa.getNireTableroa();
+		KartaZerrenda kZ = t.getKola();
+		kZ.kartaKendu(pos);
+
+	}
+
+}
