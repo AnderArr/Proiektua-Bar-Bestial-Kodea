@@ -1,15 +1,22 @@
 package packProiektua;
 
-public class CPUJokalaria extends Jokalaria {
-	
-	public CPUJokalaria(){
-		super();
+public class KanguroAnimalada implements InterfaceAnimalada {
+
+	public KanguroAnimalada(){}
+	@Override
+	public void gaitasunaBurutu(int salto) {
+		Tableroa t =  Tableroa . getNireTableroa ();
+		Karta k= t.getKola().azkenaLortu();
+		 KartaZerrenda kZ = t . getKola ();
+		 if (kZ . luzera () > 1 ) {
+				 Karta aux = kZ . getKarta (kZ . luzera () - 1 );
+				 kZ . elkartrukatu (aux, k , kZ . posizioaLortu (aux), kZ . posizioaLortu ( k ));
+				 if (salto == 2 && kZ . luzera () > 2) {
+					 aux = kZ . getKarta (kZ . posizioaLortu ( k ) - 1 );
+					 kZ . elkartrukatu (aux, k , kZ . posizioaLortu (aux), kZ . posizioaLortu ( k ));
+				 }
+		 }
 	}
 
-	public void kartaMahairaBota(){
-		Tableroa t=Tableroa.getNireTableroa();
-		this.eskuan.barajatu();
-		Karta e=this.eskuan.kartaHartu();
-		t.getKola().kartaGehitu(e);
-	}
 }
+
