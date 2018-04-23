@@ -1,0 +1,28 @@
+package packProiektua;
+
+public class KrokodiloAnimalada implements InterfaceAnimalada {
+
+	public KrokodiloAnimalada(){}
+	@Override
+	public void gaitasunaBurutu(int a) {
+		Tableroa t= Tableroa.getNireTableroa();
+		Karta k=t.getKola().azkenaLortu();
+		KartaZerrenda kZ = t.getKola();
+		if (kZ.luzera()>1){
+			boolean irten=false;
+			Karta aux= kZ.getKarta(kZ.luzera()-1);
+			while ((aux.getBalioa()<k.balioa)&&(!irten)){
+				kZ.kartaEzabatu(aux);
+				int ind=kZ.posizioaLortu(k);
+				if (ind>1){
+					aux=kZ.getKarta(ind-1);
+				} else {
+					irten=true;
+				}
+				
+			}
+		}
+
+	}
+
+}
