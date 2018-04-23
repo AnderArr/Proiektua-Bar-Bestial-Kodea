@@ -1,0 +1,26 @@
+package packProiektua;
+
+public class SugeAnimalada implements InterfaceAnimalada {
+
+	public SugeAnimalada(){}
+	@Override
+	public void gaitasunaBurutu(int a) {
+		Tableroa t= Tableroa.getNireTableroa();
+		KartaZerrenda kZ = t.getKola();
+		int luzera=kZ.luzera();
+		Karta aux1=null;
+		Karta aux2=null;
+		for (int ind=0; ind<luzera;ind++){
+			aux1=kZ.getKarta(ind);
+			for (int ind2=ind; ind2<luzera; ind2++){
+				aux2=kZ.getKarta(ind2);
+				if (aux2.getBalioa()>aux1.getBalioa()){
+					aux1=aux2;
+				}
+			}
+			kZ.elkartrukatu(kZ.getKarta(0), aux1, ind, kZ.posizioaLortu(aux1));
+		}
+
+	}
+
+}
