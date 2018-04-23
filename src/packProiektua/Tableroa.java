@@ -51,8 +51,8 @@ public class Tableroa extends Observable{
 		return nireTableroa;
 	}
 	
-	public void txandaJokatu(int pos){
-		    J1.kartaMahairaBota(pos);
+	public void txandaJokatu(int pos,int aux){
+		    J1.kartaMahairaBota(pos,aux);
 		    J1.kartaBarajatikHartu();
 		    animaladaRekurrenteak();
 		    this.kolaEguneratu();
@@ -67,7 +67,7 @@ public class Tableroa extends Observable{
 	public void animaladaRekurrenteak(){
 		for(int i=0;i<this.kola.luzera();i++){
 			Karta k= this.kola.getKarta(i);
-			if (k.getErrepikatu()){
+			if (k.getErrepikatu() && this.kola.luzera()>1){
 				k.gaitasunaBurutu(0);
 			}
 		}
@@ -122,6 +122,7 @@ public class Tableroa extends Observable{
 	public void jokoaHasieratu(){
 		J1.jokalariaHasieratu("Urdina");
 		CPU.jokalariaHasieratu("Berdea");
+		notifyObservers();
 	}
 	
 }
