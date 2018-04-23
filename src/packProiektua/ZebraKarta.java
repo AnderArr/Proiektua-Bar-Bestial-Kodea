@@ -10,6 +10,4 @@ public class ZebraKarta extends Karta{
 	public void gaitasunaBurutu(){
 		
 	}
-	
-
 }

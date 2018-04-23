@@ -1,10 +1,14 @@
-package packProiektua;
+package JUnitak;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import packProiektua.Karta;
+import packProiektua.KartaFactory;
+import packProiektua.KartaZerrenda;
 
 public class KartaZerrendaTest {
 	private KartaZerrenda kz;

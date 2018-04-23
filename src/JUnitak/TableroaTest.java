@@ -1,10 +1,12 @@
-package packProiektua;
+package JUnitak;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import packProiektua.Tableroa;
 
 public class TableroaTest {
 	private Tableroa t;

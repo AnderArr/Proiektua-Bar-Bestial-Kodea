@@ -18,28 +18,32 @@ public abstract class Karta {
 		this.zenbakia=pZenbakia;
 	}
 	
-	public void gaitasunaBurutu(){
+	public void gaitasunaBurutu(int pErabiltzailea){
 		
 	}
+	
 	public String getIzena(){
 		return this.izena;
 	}
+	
 	public int getZenbakia(){
 		return this.zenbakia;
 	}
+	
 	public int getBalioa(){
 		return this.balioa;
 	}
+	
 	public String getKolorea(){
 		return this.kolorea;
 	}
+	
 	public String getDeskribapena(){
 		return this.deskribapena;
 	}
+	
 	public boolean getErrepikatu(){
 		return this.errepikatu;
 	}
 	
-	
-
 }

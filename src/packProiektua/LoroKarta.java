@@ -7,11 +7,9 @@ public class LoroKarta extends Karta{
 		super("Loroa",2,false,pKolorea,"<html>Jokoan sartzean,<br> jokalariak nahi duen<br> animalia kanporatzen<br> du.<br><br><br><br><br></html>",4);
 	}
 	
-	public void gaitasunaBurutu(){
+	public void gaitasunaBurutu(int pErabiltzailea){
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
-		String galdera="Zer karta kendu nahi duzu mahaitik?";
-		int pos = kZ.galdetu(galdera);
-		kZ.kartaKendu(pos);
+		kZ.kartaKendu(pErabiltzailea);
 	}
 }

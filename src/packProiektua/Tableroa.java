@@ -68,7 +68,7 @@ public class Tableroa extends Observable{
 		for(int i=0;i<this.kola.luzera();i++){
 			Karta k= this.kola.getKarta(i);
 			if (k.getErrepikatu()){
-				k.gaitasunaBurutu();
+				k.gaitasunaBurutu(0);
 			}
 		}
 	}

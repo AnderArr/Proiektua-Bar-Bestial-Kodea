@@ -50,6 +50,7 @@ public class KartaZerrenda {
 	
 	public void kartaEzabatu(Karta k1){
 		this.kartaZerrenda.remove(k1);
+		this.kartaKop--;
 	}
 	
 	public void hasieranJarri(Karta k1){
