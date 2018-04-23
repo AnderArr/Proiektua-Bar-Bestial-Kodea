@@ -55,11 +55,15 @@ public class Tableroa extends Observable{
 		    J1.kartaMahairaBota(pos,aux);
 		    J1.kartaBarajatikHartu();
 		    animaladaRekurrenteak();
-		    this.kolaEguneratu();
+		    if (this.kola.luzera()==5){
+		    	this.kolaEguneratu();
+		    }
 			CPU.kartaMahairaBota();
 			CPU.kartaBarajatikHartu();
 			animaladaRekurrenteak();
-			this.kolaEguneratu();
+			if (this.kola.luzera()==5){
+		    	this.kolaEguneratu();
+		    }
 			notifyObservers();
 	}
 	
