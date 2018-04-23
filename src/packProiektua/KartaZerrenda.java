@@ -54,25 +54,29 @@ public class KartaZerrenda {
 	}
 	
 	public void hasieranJarri(Karta k1){
-		this.kartaZerrenda.add(0, k1);
+				this.kartaZerrenda.add(0, k1);
 	}
-	
+		
 	public void elkartrukatu (Karta k1, Karta k2, int pos1, int pos2){
-		this.kartaZerrenda.set(pos2, k1);
-		this.kartaZerrenda.set(pos1, k2);
+			this.kartaZerrenda.set(pos2, k1);
+			this.kartaZerrenda.set(pos1, k2);
 	}
 	
 	public int posizioaLortu(Karta k1){
-		return this.kartaZerrenda.indexOf(k1);
+			return this.kartaZerrenda.indexOf(k1);
 	}
 	
-	public int galdetu(String pGaldera){
-		System.out.println(pGaldera);
-		int aux=0;
-		return aux;
+	public Karta azkenaLortu(){
+		return this.getKarta(kartaKop-1);
 	}
 	
-	public void kartaPosizioanGehitu(int ind, Karta pKarta){
-		this.kartaZerrenda.add(ind, pKarta);
+	public  int  galdetu ( String  pGaldera ) {
+				 System.out.println(pGaldera);
+				 int aux = 0 ;
+				 return aux;
+	}
+			
+	public  void  kartaPosizioanGehitu ( int  ind , Karta  pKarta ) {
+				 this.kartaZerrenda.add(ind, pKarta);
 	}
 }
