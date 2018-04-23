@@ -1,0 +1,5 @@
+package packProiektua;
+
+public interface InterfaceAnimalada {
+	public void gaitasunaBurutu(int a);
+}
