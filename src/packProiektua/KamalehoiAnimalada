@@ -1,0 +1,25 @@
+package packProiektua;
+
+public class KamalehoiAnimalada implements InterfaceAnimalada {
+
+	public KamalehoiAnimalada(){}
+	@Override
+	public void gaitasunaBurutu(int pos) {
+		Tableroa t =  Tableroa . getNireTableroa ();
+		Karta k1=t.getKola().azkenaLortu();
+		if (t.getKola().luzera()>1){
+			KartaZerrenda kZ = t . getKola ();
+			Karta aux = kZ . getKarta (pos);
+			KartaFactory kF =  KartaFactory . getKartaFactory ();
+			Karta k = kF . createKarta (aux . getIzena (), k1. getKolorea ());
+			kZ . kartaEzabatu ( k1 );
+			kZ . kartaGehitu (k);
+			k . gaitasunaBurutu (0);
+			pos = kZ . posizioaLortu (k);
+			kZ . kartaEzabatu (k);
+			kZ . kartaPosizioanGehitu (pos, k1 );
+		}
+
+	}
+
+}
