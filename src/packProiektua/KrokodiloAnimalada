@@ -10,11 +10,11 @@ public class KrokodiloAnimalada implements InterfaceAnimalada {
 		KartaZerrenda kZ = t.getKola();
 		if (kZ.luzera()>1){
 			boolean irten=false;
-			Karta aux= kZ.getKarta(kZ.luzera()-1);
-			while ((aux.getBalioa()<k.balioa)&&(!irten)){
+			Karta aux= kZ.getKarta(kZ.luzera()-2);
+			while ((aux.getZenbakia()<k.zenbakia)&&(!irten)){
 				kZ.kartaEzabatu(aux);
 				int ind=kZ.posizioaLortu(k);
-				if (ind>1){
+				if (ind>=1){
 					aux=kZ.getKarta(ind-1);
 				} else {
 					irten=true;
@@ -22,6 +22,7 @@ public class KrokodiloAnimalada implements InterfaceAnimalada {
 				
 			}
 		}
+		
 
 	}
 
