@@ -6,14 +6,14 @@ public class HipopotamoAnimalada implements InterfaceAnimalada {
 	public void gaitasunaBurutu(int a) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
-		Karta k= t.getKola().azkenaLortu();
+		Karta k= kZ.azkenaLortu();
 		if (kZ.luzera()>1){
 			boolean irten=false;
-			Karta aux = kZ.getKarta(kZ.luzera()-1);
-			while((aux.getBalioa()<k.balioa)&&(!aux.getIzena().equals("Zebra")&&(!irten))){
+			Karta aux = kZ.getKarta(kZ.luzera()-2);
+			while((aux.getZenbakia()<k.zenbakia)&&(!aux.getIzena().equals("Zebra")&&(!irten))){
 				kZ.elkartrukatu(aux, k, kZ.posizioaLortu(aux), kZ.posizioaLortu(k));
 				int ind =kZ.posizioaLortu(k);
-				if (ind>1){
+				if (ind>=1){
 					aux=kZ.getKarta(ind-1);
 				} else {
 					irten=true;
