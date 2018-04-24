@@ -35,11 +35,35 @@ public class KartaZerrenda {
 		return k;
 	}
 	
+	public boolean kamalehoiaDa(int pPos){
+		if (this.getKarta(pPos) instanceof KamalehoiKarta){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean kanguroaDa(int pPos){
+		if (this.getKarta(pPos) instanceof KanguroKarta){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean loroaDa(int pPos){
+		if (this.getKarta(pPos) instanceof LoroKarta){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	public void barajatu(){
 		Collections.shuffle(this.kartaZerrenda);
 	}
 	public int luzera(){
-		return kartaZerrenda.size();
+		return kartaKop;
 	}
 	public Karta getKarta(int i){
 		return this.kartaZerrenda.get(i);
@@ -53,30 +77,38 @@ public class KartaZerrenda {
 		this.kartaKop--;
 	}
 	
+	
+	
 	public void hasieranJarri(Karta k1){
-				this.kartaZerrenda.add(0, k1);
+		this.kartaZerrenda.add(0, k1);
+		this.kartaKop++;
 	}
-		
+	
 	public void elkartrukatu (Karta k1, Karta k2, int pos1, int pos2){
-			this.kartaZerrenda.set(pos2, k1);
-			this.kartaZerrenda.set(pos1, k2);
+		this.kartaZerrenda.set(pos2, k1);
+		this.kartaZerrenda.set(pos1, k2);
 	}
 	
 	public int posizioaLortu(Karta k1){
-			return this.kartaZerrenda.indexOf(k1);
+		return this.kartaZerrenda.indexOf(k1);
+	}
+	
+	
+	
+	public int galdetu(String pGaldera){
+		System.out.println(pGaldera);
+		int aux=0;
+		return aux;
+	}
+	
+	public void kartaPosizioanGehitu(int ind, Karta pKarta){
+		this.kartaZerrenda.add(ind, pKarta);
+		this.kartaKop++;
 	}
 	
 	public Karta azkenaLortu(){
 		return this.getKarta(kartaKop-1);
 	}
-	
-	public  int  galdetu ( String  pGaldera ) {
-				 System.out.println(pGaldera);
-				 int aux = 0 ;
-				 return aux;
-	}
-			
-	public  void  kartaPosizioanGehitu ( int  ind , Karta  pKarta ) {
-				 this.kartaZerrenda.add(ind, pKarta);
-	}
+
+
 }
