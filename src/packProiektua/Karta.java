@@ -43,5 +43,9 @@ public abstract class Karta implements InterfaceAnimalada{
 			 return  this.errepikatu;
 	}
 	
+	public String getKartaIrudia(){
+		String s1="<html>"+String.valueOf(this.zenbakia)+"<br>"+this.izena+"<br>"+this.kolorea+"<br>"+this.deskribapena+"</html>";
+		return s1;
+	}
 
 }
