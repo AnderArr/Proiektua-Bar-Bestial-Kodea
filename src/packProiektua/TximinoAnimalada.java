@@ -14,7 +14,7 @@ public class TximinoAnimalada implements InterfaceAnimalada {
 			Karta k1=itr.next();
 			boolean irten=false;
 			while((k1!=k) && (!irten)){
-				if (k1.getIzena().equals(k.izena)){
+				if (k1 instanceof TximinoKarta){
 					irten=true;
 				}
 				k1=itr.next();
@@ -28,6 +28,8 @@ public class TximinoAnimalada implements InterfaceAnimalada {
 					}
 					aux=itr2.next();
 				}
+				kZ.kartaEzabatu(k);
+				kZ.kartaEzabatu(k1);
 				kZ.hasieranJarri(k1);
 				kZ.hasieranJarri(k);
 			}
