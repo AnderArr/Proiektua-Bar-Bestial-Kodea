@@ -14,7 +14,7 @@ public class LehoiAnimalada implements InterfaceAnimalada {
 		Karta aux=itr.next();
 		boolean irten = true;
 		while ((aux!=k)&&(!irten)){
-			if (aux.getIzena().equals(k.izena)){
+			if (aux instanceof LehoiKarta){
 				irten=true;
 			}
 			aux=itr.next();
@@ -29,6 +29,9 @@ public class LehoiAnimalada implements InterfaceAnimalada {
 				aux=itr2.next();
 			}
 			kZ.hasieranJarri(k);
+		}
+		else{
+			kZ.kartaEzabatu(k);
 		}
 
 	}
