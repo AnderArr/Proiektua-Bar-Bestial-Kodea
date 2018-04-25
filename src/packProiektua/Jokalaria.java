@@ -71,4 +71,8 @@ public class Jokalaria {
 	public void kartaMahairaBota(){
 
 	}
+	
+	public boolean kartakGeratuBarajan(){
+		return this.baraja.luzera()!=0;
+	}
 }
