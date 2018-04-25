@@ -14,7 +14,7 @@ public class SugeAnimalada implements InterfaceAnimalada {
 			aux1=kZ.getKarta(ind);
 			for (int ind2=ind; ind2<luzera; ind2++){
 				aux2=kZ.getKarta(ind2);
-				if (aux2.getBalioa()>aux1.getBalioa()){
+				if (aux2.getZenbakia()>aux1.getZenbakia()){
 					aux1=aux2;
 				}
 			}
