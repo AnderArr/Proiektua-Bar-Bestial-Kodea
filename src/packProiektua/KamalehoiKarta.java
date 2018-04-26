@@ -8,8 +8,8 @@ public class KamalehoiKarta extends Karta{
 		this.ia= new KamalehoiAnimalada();
 	}
 	
-	public void gaitasunaBurutu(int pos){
-		this.ia.gaitasunaBurutu(pos);
+	public void gaitasunaBurutu(int pos,int b, Karta k){
+		this.ia.gaitasunaBurutu(pos,b,this);
 	}
 
 }
