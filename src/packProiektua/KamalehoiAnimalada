@@ -4,22 +4,27 @@ public class KamalehoiAnimalada implements InterfaceAnimalada {
 
 	public KamalehoiAnimalada(){}
 	@Override
-	public void gaitasunaBurutu(int pos) {
+	public void gaitasunaBurutu(int pos, int b,Karta k) {
 		Tableroa t =  Tableroa . getNireTableroa ();
-		Karta k1=t.getKola().azkenaLortu();
-		if (t.getKola().luzera()>1){
-			KartaZerrenda kZ = t . getKola ();
-			Karta aux = kZ . getKarta (pos);
-			KartaFactory kF =  KartaFactory . getKartaFactory ();
-			Karta k = kF . createKarta (aux . getIzena (), k1. getKolorea ());
-			kZ . kartaEzabatu ( k1 );
-			kZ . kartaGehitu (k);
-			k . gaitasunaBurutu (0);
-			pos = kZ . posizioaLortu (k);
-			kZ . kartaEzabatu (k);
-			kZ . kartaPosizioanGehitu (pos, k1 );
+		Karta aux=t.getKola().getKarta(pos);
+		t.getKola().kartaEzabatu(k);
+		/*t.getKola().kartaEzabatu(k);
+		k.setZenbakia(aux.getZenbakia());
+		
+		aux.gaitasunaBurutu(0,k);
+		t.getKola().kamalehoiZenbakia();*/
+		if(!(aux instanceof KamalehoiKarta)){
+			Karta aux2=KartaFactory.getKartaFactory().createKarta(aux.getIzena(), aux.getKolorea());
+			t.getKola().kartaGehitu(aux2);
+			aux2.gaitasunaBurutu(pos, b, aux2);
+		
+			if(t.getKola().posizioaLortu(aux2)!=-1){
+				t.getKola().kartaGehitu(k);
+				t.getKola().elkartrukatu(k, aux2, t.getKola().posizioaLortu(k), t.getKola().posizioaLortu(aux2));
+				t.getKola().kartaEzabatu(aux2);}
+		}else{
+			t.getKola().kartaGehitu(k);
 		}
-
 	}
 
 }
