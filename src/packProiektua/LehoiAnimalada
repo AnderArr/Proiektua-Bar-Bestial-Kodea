@@ -1,38 +1,32 @@
 package packProiektua;
 
-import java.util.Iterator;
+
 
 public class LehoiAnimalada implements InterfaceAnimalada {
 
 	public LehoiAnimalada(){}
 	@Override
-	public void gaitasunaBurutu(int a) {
+	public void gaitasunaBurutu(int a,int b, Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
-		Karta k=t.getKola().azkenaLortu();
 		KartaZerrenda kZ = t.getKola();
-		Iterator<Karta> itr = kZ.getIteradorea();
-		Karta aux=itr.next();
-		boolean irten = true;
-		while ((aux!=k)&&(!irten)){
+		boolean lehoiak = false;
+		kZ.kartaEzabatu(k);
+		for(int ind=0;ind<kZ.luzera();ind++){
+			Karta aux=kZ.getKarta(ind);
 			if (aux instanceof LehoiKarta){
-				irten=true;
+				lehoiak=true;
 			}
-			aux=itr.next();
+			
 		}
-		if (!irten){
-			Iterator<Karta> itr2= kZ.getIteradorea();
-			aux=itr2.next();
-			while (aux!=k){
-				if (aux.getIzena().equals("Tximinoa")){
-					kZ.kartaEzabatu(aux);
+		if (!lehoiak){
+			for(int i=0;i<kZ.luzera();i++){
+				if(kZ.getKarta(i) instanceof TximinoKarta){
+					kZ.kartaKendu(i);
 				}
-				aux=itr2.next();
 			}
 			kZ.hasieranJarri(k);
 		}
-		else{
-			kZ.kartaEzabatu(k);
-		}
+		
 
 	}
 
