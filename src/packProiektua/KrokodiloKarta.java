@@ -8,9 +8,10 @@ public class KrokodiloKarta extends Karta{
 		this.ia= new KrokodiloAnimalada();
 	}
 	
-	public void gaitasunaBurutu(int a){
-		this.ia.gaitasunaBurutu(a);
+	public void gaitasunaBurutu(int a, int b,Karta k){
+		this.ia.gaitasunaBurutu(a,b,this);
 	}
 	
 
 }
+
