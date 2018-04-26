@@ -1,5 +1,5 @@
 package packProiektua;
 
 public interface InterfaceAnimalada {
-	public void gaitasunaBurutu(int a);
+	public void gaitasunaBurutu(int a, int b, Karta k);
 }
