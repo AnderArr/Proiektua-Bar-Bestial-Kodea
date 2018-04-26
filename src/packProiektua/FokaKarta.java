@@ -1,5 +1,6 @@
 package packProiektua;
 
+import java.util.Iterator;
 
 public class FokaKarta extends Karta{
 	
@@ -9,9 +10,9 @@ public class FokaKarta extends Karta{
 		this.ia= new FokaAnimalada();
 	}
 	
-	public void gaitasunaBurutu(int a){
-				ia.gaitasunaBurutu(a);
+	public void gaitasunaBurutu(int a,int b, Karta k){
+				ia.gaitasunaBurutu(a,b,this);
 	}
-	
 
+	
 }
