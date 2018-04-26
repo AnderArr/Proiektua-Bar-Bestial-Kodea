@@ -29,9 +29,11 @@ public class TableroaFrame extends JFrame implements Observer{
 	private JPanel paneKola;
 	private JPanel paneKanguroa;
 	private JPanel paneLoroa;
+	private JPanel paneKanguroaKamalehoia;
 	//private JPanel pane3;
 	private JPanel paneTitulua;
 	private JPanel botoiak;
+	private JPanel botoiak2;
 	private JButton btnKarta_0;
 	private JButton btnKarta_1;
 	private JButton btnKarta_2;
@@ -48,8 +50,11 @@ public class TableroaFrame extends JFrame implements Observer{
 	private JLabel kolabel5;
 	private JLabel titulua;
 	private JLabel zenbat;
+	private JLabel zenbat2;
 	private JButton btnKanguro1;
 	private JButton btnKanguro2;
+	private JButton btnKanguro3;
+	private JButton btnKanguro4;
 	private JButton btnLoro1;
 	private JButton btnLoro2;
 	private JButton btnLoro3;
@@ -193,7 +198,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		Tableroa t=Tableroa.getNireTableroa();
 		t.addObserver(this);
 		
-		
+		paneKanguroaKamalehoia=new JPanel();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 707, 300);
 		
@@ -207,6 +212,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		paneKamalehoia.setVisible(false);
 		paneLoroa=new JPanel();
 		paneLoroa.setVisible(false);
+		paneKanguroaKamalehoia.setVisible(false);
 		//pane3= new JPanel();
 		paneTitulua= new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -219,7 +225,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKarta_0.setBounds(new Rectangle(100, 100, 100, 5000));
 		btnKarta_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())){
+				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())&&(!paneKanguroaKamalehoia.isVisible())){
 					botoiPultsatu(0);
 				}
 			}
@@ -231,7 +237,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKarta_1 = new JButton();
 		btnKarta_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())){
+				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())&&(!paneKanguroaKamalehoia.isVisible())){
 					botoiPultsatu(1);
 				}
 			}
@@ -249,7 +255,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKarta_2 = new JButton();
 		btnKarta_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())){
+				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())&&(!paneKanguroaKamalehoia.isVisible())){
 					botoiPultsatu(2);
 				}
 			}
@@ -260,7 +266,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKarta_3 = new JButton();	
 		btnKarta_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())){
+				if((!paneKanguroa.isVisible())&&(!paneLoroa.isVisible())&&(!paneKamalehoia.isVisible())&&(!paneKanguroaKamalehoia.isVisible())){
 					botoiPultsatu(3);
 				}
 			}
@@ -346,27 +352,27 @@ public class TableroaFrame extends JFrame implements Observer{
 		paneKamalehoia.setVisible(true);
 		contentPane.add(paneKamalehoia, BorderLayout.CENTER);
 		paneKamalehoia.setBackground(Color.green);
-		if(!kolabel1.getText().equals("Ez dago.")&&(!t.kamalehoiaDa(kolabel1.getText()))){
+		if(!kolabel1.getText().equals("Ez dago.")){
 			btnKama1=new JButton(kolabel1.getText());
 			btnKama1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			paneKamalehoia.add(btnKama1);
 		}
-		if(!kolabel2.getText().equals("Ez dago.")&&(!t.kamalehoiaDa(kolabel2.getText()))){
+		if(!kolabel2.getText().equals("Ez dago.")){
 			btnKama2=new JButton(kolabel2.getText());
 			btnKama2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			paneKamalehoia.add(btnKama2);
 		}
-		if(!kolabel3.getText().equals("Ez dago.")&&(!t.kamalehoiaDa(kolabel3.getText()))){
+		if(!kolabel3.getText().equals("Ez dago.")){
 			btnKama3=new JButton(kolabel3.getText());
 			btnKama3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			paneKamalehoia.add(btnKama3);
 		}
-		if(!kolabel4.getText().equals("Ez dago.")&&(!t.kamalehoiaDa(kolabel4.getText()))){
+		if(!kolabel4.getText().equals("Ez dago.")){
 			btnKama4=new JButton(kolabel4.getText());
 			btnKama4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			paneKamalehoia.add(btnKama4);
 		}
-		if(!kolabel5.getText().equals("Ez dago.")&&(!t.kamalehoiaDa(kolabel5.getText()))){
+		if(!kolabel5.getText().equals("Ez dago.")){
 			btnKama5=new JButton(kolabel5.getText());
 			btnKama5.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			paneKamalehoia.add(btnKama5);
@@ -375,12 +381,13 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKama1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				if(t.loroaDaKolan(0)){
-					loroaAtxitu(aux);
+					loroaAtxituKamalehoia(aux,0);
 				}else{
 					if(t.kanguroaDaKolan(0)){
-						kanguroaAtxitu(aux);
+						kanguroaAtxituKamalehoia(aux,0);
 					}else{
-						t.txandaJokatu(aux, 0);
+						
+						t.txandaJokatu(aux, 0,0);
 					}
 				}
 				paneKamalehoia.setVisible(false);
@@ -391,12 +398,12 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKama2.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				if(t.loroaDaKolan(1)){
-					loroaAtxitu(aux);
+					loroaAtxituKamalehoia(aux,1);
 				}else{
 					if(t.kanguroaDaKolan(1)){
-						kanguroaAtxitu(aux);
+						kanguroaAtxituKamalehoia(aux,1);
 					}else{
-						t.txandaJokatu(aux, 1);
+						t.txandaJokatu(aux, 1,0);
 					}
 				}
 				paneKamalehoia.setVisible(false);
@@ -407,12 +414,12 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKama3.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				if(t.loroaDaKolan(2)){
-					loroaAtxitu(aux);
+					loroaAtxituKamalehoia(aux,2);
 				}else{
 					if(t.kanguroaDaKolan(2)){
-						kanguroaAtxitu(aux);
+						kanguroaAtxituKamalehoia(aux,2);
 					}else{
-						t.txandaJokatu(aux, 2);
+						t.txandaJokatu(aux, 2,0);
 					}
 				}
 				paneKamalehoia.setVisible(false);
@@ -423,12 +430,12 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKama4.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				if(t.loroaDaKolan(3)){
-					loroaAtxitu(aux);
+					loroaAtxituKamalehoia(aux,3);
 				}else{
 					if(t.kanguroaDaKolan(3)){
-						kanguroaAtxitu(aux);
+						kanguroaAtxituKamalehoia(aux,3);
 					}else{
-						t.txandaJokatu(aux, 3);
+						t.txandaJokatu(aux, 3,0);
 					}
 				}
 				paneKamalehoia.setVisible(false);
@@ -439,14 +446,14 @@ public class TableroaFrame extends JFrame implements Observer{
 		btnKama5.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				if(t.loroaDaKolan(4)){
-					paneKamalehoia.setVisible(false);
-					loroaAtxitu(aux);
+		
+					loroaAtxituKamalehoia(aux,4);
 				}else{
 					if(t.kanguroaDaKolan(4)){
-						paneKamalehoia.setVisible(false);
-						kanguroaAtxitu(aux);
+						
+						kanguroaAtxituKamalehoia(aux,4);
 					}else{
-						t.txandaJokatu(aux, 4);
+						t.txandaJokatu(aux, 4,0);
 					}
 				}
 				paneKamalehoia.setVisible(false);
@@ -459,8 +466,6 @@ public class TableroaFrame extends JFrame implements Observer{
 	
 	public void kanguroaAtxitu(int aux){
 		Tableroa t=Tableroa.getNireTableroa();
-		paneKamalehoia.setVisible(false);
-		paneKamalehoia.updateUI();
 		paneKanguroa.setVisible(true);
 		contentPane.add(paneKanguroa, BorderLayout.EAST);
 		paneKanguroa.setLayout(new BorderLayout());
@@ -478,14 +483,14 @@ public class TableroaFrame extends JFrame implements Observer{
 		paneKanguroa.updateUI();
 		btnKanguro1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 1);
+				t.txandaJokatu(aux, 0,1);
 				paneKanguroa.setVisible(false);
 				bukatutaAhalDago();
 			}
 		});
 		btnKanguro2.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 2);
+				t.txandaJokatu(aux, 0,2);
 				paneKanguroa.setVisible(false);
 				bukatutaAhalDago();
 			}
@@ -525,9 +530,10 @@ public class TableroaFrame extends JFrame implements Observer{
 			btnLoro5.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			paneLoroa.add(btnLoro5);
 		}
+		contentPane.updateUI();
 		btnLoro1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 0);
+				t.txandaJokatu(aux, 0,0);
 				paneLoroa.setVisible(false);
 				paneKola.setVisible(true);
 				bukatutaAhalDago();
@@ -535,7 +541,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		});
 		btnLoro2.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 1);
+				t.txandaJokatu(aux, 0,1);
 				paneLoroa.setVisible(false);
 				paneKola.setVisible(true);
 				bukatutaAhalDago();
@@ -543,7 +549,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		});
 		btnLoro3.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 2);
+				t.txandaJokatu(aux, 0,2);
 				paneLoroa.setVisible(false);
 				paneKola.setVisible(true);
 				bukatutaAhalDago();
@@ -551,7 +557,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		});
 		btnLoro4.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 3);
+				t.txandaJokatu(aux, 0,3);
 				paneLoroa.setVisible(false);
 				paneKola.setVisible(true);
 				bukatutaAhalDago();
@@ -559,7 +565,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		});
 		btnLoro5.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				t.txandaJokatu(aux, 4);
+				t.txandaJokatu(aux, 0,4);
 				paneLoroa.setVisible(false);
 				paneKola.setVisible(true);
 				bukatutaAhalDago();
@@ -581,12 +587,12 @@ public class TableroaFrame extends JFrame implements Observer{
 					if(t.kanguroaDa(i)){
 						kanguroaAtxitu(i);
 					}else{
-						t.txandaJokatu(i, 0);
+						t.txandaJokatu(i, 0,0);
 					}
 				}
 			}
 		}else{
-			t.txandaJokatu(i, 0);
+			t.txandaJokatu(i, 0,0);
 		}
 		if(!t.kartakGeratuEskuan()){
 			paneKola.setVisible(false);
@@ -615,6 +621,88 @@ public class TableroaFrame extends JFrame implements Observer{
 		}
 	}
 	
+	public void loroaAtxituKamalehoia(int aux, int pos){
+		Tableroa t=Tableroa.getNireTableroa();
+		btnKama1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux, pos,0);
+				paneKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+		btnKama2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux,pos, 1);
+				paneKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+		btnKama3.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux,pos, 2);
+				paneKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+		btnKama4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux,pos, 3);
+				paneKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+		btnKama5.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux,pos, 4);
+				paneKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+	}
+	
+	public void kanguroaAtxituKamalehoia(int aux, int pos){
+		Tableroa t=Tableroa.getNireTableroa();
+		paneKanguroaKamalehoia.setVisible(true);
+		contentPane.add(paneKanguroaKamalehoia, BorderLayout.AFTER_LINE_ENDS);
+		btnKanguro3=new JButton("1");
+		btnKanguro4=new JButton ("2");
+		btnKanguro3.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnKanguro4.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		paneKanguroaKamalehoia.add(btnKanguro3);
+		paneKanguroaKamalehoia.add(btnKanguro4);
+		
+		paneKanguroaKamalehoia.updateUI();
+		btnKanguro3.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux,pos,1);
+				paneKanguroaKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+		
+		btnKanguro4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				t.txandaJokatu(aux,pos,2);
+				paneKanguroaKamalehoia.setVisible(false);
+				paneKola.setVisible(true);
+				bukatutaAhalDago();
+				contentPane.updateUI();
+			}
+		});
+	
+	}
 	
 
 }
