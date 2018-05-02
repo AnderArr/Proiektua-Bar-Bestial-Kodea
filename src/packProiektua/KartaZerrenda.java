@@ -1,7 +1,6 @@
 package packProiektua;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 public class KartaZerrenda {
 	
@@ -68,17 +67,12 @@ public class KartaZerrenda {
 	public Karta getKarta(int i){
 		return this.kartaZerrenda.get(i);
 	}
-	public Iterator<Karta> getIteradorea(){
-		return this.kartaZerrenda.iterator();
-	}
 	
 	public void kartaEzabatu(Karta k1){
 		this.kartaZerrenda.remove(k1);
 		this.kartaKop--;
 	}
-	
-	
-	
+		
 	public void hasieranJarri(Karta k1){
 		this.kartaZerrenda.add(0, k1);
 		this.kartaKop++;
@@ -87,18 +81,20 @@ public class KartaZerrenda {
 	public void elkartrukatu (Karta k1, Karta k2, int pos1, int pos2){
 		this.kartaZerrenda.set(pos2, k1);
 		this.kartaZerrenda.set(pos1, k2);
+		
 	}
 	
 	public int posizioaLortu(Karta k1){
+		
 		return this.kartaZerrenda.indexOf(k1);
 	}
 	
-	
-	
-	public int galdetu(String pGaldera){
-		System.out.println(pGaldera);
-		int aux=0;
-		return aux;
+	public void kamalehoiZenbakia(){
+		for (int i=0;i<this.kartaKop;i++){
+			if(this.kartaZerrenda.get(i) instanceof KamalehoiKarta){
+				this.kartaZerrenda.get(i).setZenbakia(5);
+			}
+		}
 	}
 	
 	public void kartaPosizioanGehitu(int ind, Karta pKarta){
@@ -109,6 +105,4 @@ public class KartaZerrenda {
 	public Karta azkenaLortu(){
 		return this.getKarta(kartaKop-1);
 	}
-
-
 }
