@@ -15,6 +15,4 @@ public class JokalariErreala extends Jokalaria {
 			k.gaitasunaBurutu(aux,aux2,k);
 		}
 	}
-
-	
 }
