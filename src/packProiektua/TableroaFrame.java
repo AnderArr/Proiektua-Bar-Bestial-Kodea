@@ -64,7 +64,6 @@ public class TableroaFrame extends JFrame implements Observer{
 	
 	private static TableroaFrame frame;
 
-	
 	/**
 	 * Launch the application.
 	 */
@@ -79,8 +78,8 @@ public class TableroaFrame extends JFrame implements Observer{
 					e.printStackTrace();
 				}
 			}
-		});
-		
+		}
+		);
 	}
 	
 	public void update(Observable o, Object arg) {
@@ -175,16 +174,7 @@ public class TableroaFrame extends JFrame implements Observer{
 		kolabel2.setText(s2);
 		kolabel3.setText(s3);
 		kolabel4.setText(s4);
-		kolabel5.setText(s5);		
-				
-						
-						
-					    
-						
-						
-						
-						
-				
+		kolabel5.setText(s5);				
     }
 
 	/**
@@ -218,7 +208,6 @@ public class TableroaFrame extends JFrame implements Observer{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 	
-		
         btnKarta_0 = new JButton();
 		
 		btnKarta_0.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -229,10 +218,8 @@ public class TableroaFrame extends JFrame implements Observer{
 					botoiPultsatu(0);
 				}
 			}
-		});
-		
-		
-		
+		}
+		);
 		
 		btnKarta_1 = new JButton();
 		btnKarta_1.addActionListener(new ActionListener() {
@@ -241,16 +228,10 @@ public class TableroaFrame extends JFrame implements Observer{
 					botoiPultsatu(1);
 				}
 			}
-		});
-		
-		
-		
-		
-		
-		
+		}
+		);
 		
 		btnKarta_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
 		
 		btnKarta_2 = new JButton();
 		btnKarta_2.addActionListener(new ActionListener() {
@@ -259,9 +240,9 @@ public class TableroaFrame extends JFrame implements Observer{
 					botoiPultsatu(2);
 				}
 			}
-		});
+		}
+		);
 		btnKarta_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
 		
 		btnKarta_3 = new JButton();	
 		btnKarta_3.addActionListener(new ActionListener() {
@@ -270,12 +251,9 @@ public class TableroaFrame extends JFrame implements Observer{
 					botoiPultsatu(3);
 				}
 			}
-		});
+		}
+		);
 		btnKarta_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
-		
-		
-				
 
 				//panela
 				
@@ -295,10 +273,6 @@ public class TableroaFrame extends JFrame implements Observer{
 				paneEskua.add(btnKarta_1);
 				paneEskua.add(btnKarta_2);
 				paneEskua.add(btnKarta_3);
-				
-				
-				
-				
 				
 				titulua=new JLabel ("<html>BAR BESTIAL<br></html>");
 				titulua.setFont(new Font("Tahoma", Font.PLAIN, 75));
@@ -330,19 +304,6 @@ public class TableroaFrame extends JFrame implements Observer{
 				
 				paneKola.setBorder(BorderFactory.createLineBorder(Color.black));
 				t.jokoaHasieratu();
-			
-					
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 	
@@ -701,8 +662,5 @@ public class TableroaFrame extends JFrame implements Observer{
 				contentPane.updateUI();
 			}
 		});
-	
 	}
-	
-
 }
