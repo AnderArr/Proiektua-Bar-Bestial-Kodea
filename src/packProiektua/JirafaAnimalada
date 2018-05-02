@@ -2,10 +2,8 @@ package packProiektua;
 
 public class JirafaAnimalada implements InterfaceAnimalada {
 
-	public JirafaAnimalada(){
-		
-	}
-	@Override
+	public JirafaAnimalada(){}
+	
 	public void gaitasunaBurutu(int a,int b, Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
@@ -16,9 +14,6 @@ public class JirafaAnimalada implements InterfaceAnimalada {
 					kZ.elkartrukatu(k,aux ,kZ.posizioaLortu(k), kZ.posizioaLortu(aux));
 				}
 			}
-			
 		}
-
 	}
-
 }
