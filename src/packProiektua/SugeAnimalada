@@ -3,8 +3,8 @@ package packProiektua;
 public class SugeAnimalada implements InterfaceAnimalada {
 
 	public SugeAnimalada(){}
-	@Override
-	public void gaitasunaBurutu(int a) {
+	
+	public void gaitasunaBurutu(int a, int b,Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
 		int luzera=kZ.luzera();
@@ -18,9 +18,7 @@ public class SugeAnimalada implements InterfaceAnimalada {
 					aux1=aux2;
 				}
 			}
-			kZ.elkartrukatu(kZ.getKarta(0), aux1, ind, kZ.posizioaLortu(aux1));
+			kZ.elkartrukatu(kZ.getKarta(ind), aux1, ind, kZ.posizioaLortu(aux1));
 		}
-
 	}
-
 }
