@@ -15,13 +15,13 @@ public class CPUJokalaria extends Jokalaria {
 			if (e instanceof KamalehoiKarta){
 				if (t.getKola().getKarta(0) instanceof KamalehoiKarta){
 					if (t.getKola().luzera()>2){
-						e.gaitasunaBurutu(1);
+						e.gaitasunaBurutu(1,0,e);
 					}
 				}else{
-					e.gaitasunaBurutu(0);
+					e.gaitasunaBurutu(0,0,e);
 				}
 			}else{
-			e.gaitasunaBurutu(0);
+				e.gaitasunaBurutu(0,0,e);
 			}
 		}
 	}
