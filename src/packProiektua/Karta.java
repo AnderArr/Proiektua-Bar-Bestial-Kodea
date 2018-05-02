@@ -10,6 +10,7 @@ public abstract class Karta implements InterfaceAnimalada{
 	protected String deskribapena;
 	protected int balioa;
 	
+	
 	public Karta(String pIzena,int pZenbakia, boolean pErrepikatu, String pKolorea, String pDeskribapena,int pBalioa){
 		this.izena=pIzena;
 		this.balioa=pBalioa;
@@ -17,6 +18,10 @@ public abstract class Karta implements InterfaceAnimalada{
 		this.kolorea=pKolorea;
 		this.deskribapena=pDeskribapena;
 		this.zenbakia=pZenbakia;
+	}
+	
+	public void setZenbakia(int z){
+		this.zenbakia=z;
 	}
 	
 	public String getIzena(){
@@ -39,13 +44,12 @@ public abstract class Karta implements InterfaceAnimalada{
 		return this.deskribapena;
 	}
 	
-	public  boolean  getErrepikatu () {
-			 return  this.errepikatu;
+	public boolean getErrepikatu(){
+		return this.errepikatu;
 	}
 	
 	public String getKartaIrudia(){
 		String s1="<html>"+String.valueOf(this.zenbakia)+"<br>"+this.izena+"<br>"+this.kolorea+"<br>"+this.deskribapena+"</html>";
 		return s1;
 	}
-
 }
