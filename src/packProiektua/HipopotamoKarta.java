@@ -10,7 +10,4 @@ public class HipopotamoKarta extends Karta{
 		public void gaitasunaBurutu(int a,int b,Karta k){
 			this.ia.gaitasunaBurutu(a,b,this);
 		}
-
-	
-
 }
