@@ -1,16 +1,16 @@
 package packProiektua;
 
 public class HipopotamoAnimalada implements InterfaceAnimalada {
+	
 	public HipopotamoAnimalada(){}
-	@Override
-	public void gaitasunaBurutu(int a) {
+	
+	public void gaitasunaBurutu(int a, int b, Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
-		Karta k= kZ.azkenaLortu();
-		if (kZ.luzera()>1){
+		if ((kZ.luzera()>1)&&(kZ.posizioaLortu(k)!=0)){
 			boolean irten=false;
-			Karta aux = kZ.getKarta(kZ.luzera()-2);
-			while((aux.getZenbakia()<k.zenbakia)&&(!aux.getIzena().equals("Zebra")&&(!irten))){
+			Karta aux = kZ.getKarta(kZ.posizioaLortu(k)-1);
+			while((aux.getZenbakia()<k.getZenbakia())&&(!aux.getIzena().equals("Zebra")&&(!irten))){
 				kZ.elkartrukatu(aux, k, kZ.posizioaLortu(aux), kZ.posizioaLortu(k));
 				int ind =kZ.posizioaLortu(k);
 				if (ind>=1){
@@ -21,6 +21,5 @@ public class HipopotamoAnimalada implements InterfaceAnimalada {
 			}
 
 		}
-		}
-
+	}
 }
