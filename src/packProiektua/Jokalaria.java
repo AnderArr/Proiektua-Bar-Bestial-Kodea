@@ -1,5 +1,7 @@
 package packProiektua;
 
+import java.util.Observable;
+
 public class Jokalaria {
 	protected KartaZerrenda eskuan;
 	protected KartaZerrenda baraja;
@@ -65,12 +67,12 @@ public class Jokalaria {
 		this.sortuEskua();
 }
 	public void kartaBarajatikHartu(){
-		this.eskuan.kartaGehitu(this.baraja.kartaHartu());
+		if(this.kartakGeratuBarajan()){
+			this.eskuan.kartaGehitu(this.baraja.kartaHartu());
+		}
 	}
 
-	public void kartaMahairaBota(){
-
-	}
+	public void kartaMahairaBota(){}
 	
 	public boolean kartakGeratuBarajan(){
 		return this.baraja.luzera()!=0;
