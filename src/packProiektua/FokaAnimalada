@@ -1,7 +1,5 @@
 package packProiektua;
 
-
-
 public class FokaAnimalada implements InterfaceAnimalada{
 	public FokaAnimalada(){}
 	
