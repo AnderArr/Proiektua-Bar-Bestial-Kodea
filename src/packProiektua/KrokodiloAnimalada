@@ -3,7 +3,7 @@ package packProiektua;
 public class KrokodiloAnimalada implements InterfaceAnimalada {
 
 	public KrokodiloAnimalada(){}
-	@Override
+
 	public void gaitasunaBurutu(int a,int b, Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
@@ -22,9 +22,5 @@ public class KrokodiloAnimalada implements InterfaceAnimalada {
 				
 			}
 		}
-		
-
 	}
-
 }
-
