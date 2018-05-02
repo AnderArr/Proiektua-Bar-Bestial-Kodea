@@ -1,15 +1,12 @@
 package packProiektua;
 
-import java.util.Iterator;
-
 public class MofetaAnimalada implements InterfaceAnimalada {
 
 	public MofetaAnimalada(){}
-	@Override
-	public void gaitasunaBurutu(int a) {
+	
+	public void gaitasunaBurutu(int a, int b,Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ=t.getKola();
-		Karta k= t.getKola().azkenaLortu();
 		if ((kZ.luzera()>=2) && (!kZ.getKarta(0).getIzena().equals(k.izena))){
 			Karta k1=null;
 			k1=kZ.getKarta(0);
@@ -25,10 +22,8 @@ public class MofetaAnimalada implements InterfaceAnimalada {
 						k1=k2;
 						k2=aux;
 					}
-					Iterator<Karta> itr = kZ.getIteradorea();
-					itr.next();
-					itr.next();
-					aux=itr.next();
+					int ind=2;
+					aux=kZ.getKarta(ind);
 					while (aux!=k){
 						if (aux.getZenbakia()>k1.getZenbakia()){
 							k2=k1;
@@ -49,7 +44,8 @@ public class MofetaAnimalada implements InterfaceAnimalada {
 								}
 							}
 						}
-						aux=itr.next();
+						ind++;
+						aux=kZ.getKarta(ind);
 					}
 					if (k4!=null){
 						kZ.kartaEzabatu(k4);
@@ -63,7 +59,5 @@ public class MofetaAnimalada implements InterfaceAnimalada {
 			}
 			kZ.kartaEzabatu(k1);
 		}
-
 	}
-
 }
