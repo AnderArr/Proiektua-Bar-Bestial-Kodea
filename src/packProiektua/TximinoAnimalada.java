@@ -1,39 +1,35 @@
 package packProiektua;
 
-import java.util.Iterator;
-
 public class TximinoAnimalada implements InterfaceAnimalada {
 
 	public TximinoAnimalada(){}
-	@Override
-	public void gaitasunaBurutu(int a) {
+	
+	public void gaitasunaBurutu(int a,int b, Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
-		Karta k= t.getKola().azkenaLortu();
-			Iterator<Karta> itr = kZ.getIteradorea();
-			Karta k1=itr.next();
-			boolean irten=false;
-			while((k1!=k) && (!irten)){
-				if (k1 instanceof TximinoKarta){
-					irten=true;
-				}
-				k1=itr.next();
+		boolean tximinoak=false;
+		Karta aux3=null;
+		kZ.kartaEzabatu(k);
+		for(int ind=0;ind<kZ.luzera();ind++){
+			Karta aux=kZ.getKarta(ind);
+			if (aux instanceof TximinoKarta){
+				tximinoak=true;
+				aux3=aux;
+				kZ.kartaEzabatu(aux);
 			}
-			if (irten){
-				Iterator<Karta> itr2 = kZ.getIteradorea();
-				Karta aux = itr2.next();
-				while(aux!=k){
-					if (aux.getIzena().equals("Hipotamoa")||aux.getIzena().equals("Kokodriloa")){
-						kZ.kartaEzabatu(aux);
-					}
-					aux=itr2.next();
+		}		
+		if (tximinoak){
+			for(int i=0;i<kZ.luzera();i++){
+				Karta aux2 = kZ.getKarta(i);
+				if((aux2 instanceof HipopotamoKarta)||(aux2 instanceof KrokodiloKarta)){
+					kZ.kartaEzabatu(aux2);
 				}
-				kZ.kartaEzabatu(k);
-				kZ.kartaEzabatu(k1);
-				kZ.hasieranJarri(k1);
-				kZ.hasieranJarri(k);
+					
 			}
-
+			kZ.hasieranJarri(aux3);
+			kZ.hasieranJarri(k);
+		}else{
+			kZ.kartaGehitu(k);
+		}
 	}
-
 }
