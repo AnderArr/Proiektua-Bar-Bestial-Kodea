@@ -9,9 +9,10 @@ public class TximinoAnimalada implements InterfaceAnimalada {
 		KartaZerrenda kZ = t.getKola();
 		boolean tximinoak=false;
 		Karta aux3=null;
+		Karta aux=null;
 		kZ.kartaEzabatu(k);
 		for(int ind=0;ind<kZ.luzera();ind++){
-			Karta aux=kZ.getKarta(ind);
+			aux=kZ.getKarta(ind);
 			if (aux instanceof TximinoKarta){
 				tximinoak=true;
 				aux3=aux;
@@ -19,10 +20,14 @@ public class TximinoAnimalada implements InterfaceAnimalada {
 			}
 		}		
 		if (tximinoak){
-			for(int i=0;i<kZ.luzera();i++){
-				Karta aux2 = kZ.getKarta(i);
+			int ind=0;
+			Karta aux2 = null;
+			while (ind<kZ.luzera()){
+				aux2 = kZ.getKarta(ind);
 				if((aux2 instanceof HipopotamoKarta)||(aux2 instanceof KrokodiloKarta)){
 					kZ.kartaEzabatu(aux2);
+				} else {
+					ind++;
 				}
 					
 			}
