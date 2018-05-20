@@ -50,14 +50,14 @@ public class JirafaKartaTest {
 	public void testGaitasunaBurutu() {
 		//Proba karta bakarra.
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		kZ.kartaEzabatu(k5);
 		
 		//Proba 2 karta.
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k1));
 		kZ.kartaEzabatu(k1);
@@ -67,9 +67,9 @@ public class JirafaKartaTest {
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
-		assertTrue(kZ.getKarta(0).equals(k5));
-		assertTrue(kZ.getKarta(1).equals(k1));
+		k5.gaitasunaBurutu(0,0,k5);
+		assertTrue(kZ.getKarta(0).equals(k1));
+		assertTrue(kZ.getKarta(1).equals(k5));
 		assertTrue(kZ.getKarta(2).equals(k2));
 		kZ.kartaEzabatu(k1);
 		kZ.kartaEzabatu(k2);
@@ -80,7 +80,7 @@ public class JirafaKartaTest {
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k2));
 		assertTrue(kZ.getKarta(2).equals(k3));
@@ -90,12 +90,13 @@ public class JirafaKartaTest {
 		kZ.kartaEzabatu(k3);
 		kZ.kartaEzabatu(k5);
 		
+		//5 kartekin
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k2));
 		assertTrue(kZ.getKarta(2).equals(k3));
