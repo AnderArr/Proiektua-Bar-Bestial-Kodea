@@ -3,7 +3,7 @@ package packProiektua;
 public class KanguroAnimalada implements InterfaceAnimalada {
 
 	public KanguroAnimalada(){}
-
+	@Override
 	public void gaitasunaBurutu(int salto, int b,Karta k) {
 		Tableroa t =  Tableroa . getNireTableroa ();
 		 KartaZerrenda kZ = t . getKola ();
