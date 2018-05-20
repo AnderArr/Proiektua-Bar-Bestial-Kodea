@@ -1,0 +1,68 @@
+package JUnitak;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import packProiektua.CPUJokalaria;
+import packProiektua.JokalariErreala;
+import packProiektua.Tableroa;
+
+public class JokalariErrealaTest {
+	private Tableroa t;
+	private JokalariErreala jE;
+
+	@Before
+	public void setUp() throws Exception {
+		t=Tableroa.getNireTableroa();
+		t.jokoaHasieratu();
+		jE=new JokalariErreala();
+		jE.jokalariaHasieratu("Berdea");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		t=null;
+		jE=null;
+	}
+
+	@Test
+	public void testJokalariaHasieratu() {
+		JokalariErreala jER = new JokalariErreala();
+		jER.jokalariaHasieratu("Gorria");
+		assertTrue(jER.getEskuan().luzera()==4);
+		assertTrue(jER.getBaraja().luzera()==8);
+	}
+
+	@Test
+	public void testKartaBarajatikHartu() {
+		assertTrue(jE.getEskuan().luzera()==4);
+		assertTrue(jE.getBaraja().luzera()==8);
+		jE.kartaBarajatikHartu();
+		assertTrue(jE.getEskuan().luzera()==5);
+		assertTrue(jE.getBaraja().luzera()==7);
+		jE.kartaBarajatikHartu();
+		assertTrue(jE.getEskuan().luzera()==6);
+		assertTrue(jE.getBaraja().luzera()==6);
+	}
+
+	@Test
+	public void testKartaMahairaBota() {
+		jE.kartaMahairaBota(0,0,0);
+		assertTrue(t.getKola().luzera()==1);
+	}
+
+	@Test
+	public void testKartakGeratuBarajan() {
+		assertTrue(jE.getEskuan().luzera()==4);
+		assertTrue(jE.getBaraja().luzera()==8);
+		assertTrue(jE.kartakGeratuBarajan());
+		for(int i=0; i<8; i++){
+			jE.kartaBarajatikHartu();
+		}
+		assertFalse(jE.kartakGeratuBarajan());
+	}
+
+}
