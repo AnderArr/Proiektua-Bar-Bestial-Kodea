@@ -51,6 +51,7 @@ public class Jokalaria {
 		return this.eskuan;
 	}
 	
+	
 	private void sortuEskua(){
 		Karta k1=baraja.kartaHartu();
 		Karta k2=baraja.kartaHartu();
@@ -72,7 +73,9 @@ public class Jokalaria {
 		}
 	}
 
-	public void kartaMahairaBota(){}
+	public void kartaMahairaBota(){
+
+	}
 	
 	public boolean kartakGeratuBarajan(){
 		return this.baraja.luzera()!=0;
