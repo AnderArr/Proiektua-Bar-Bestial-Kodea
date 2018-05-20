@@ -21,7 +21,7 @@ public class CPUJokalaria extends Jokalaria {
 					e.gaitasunaBurutu(0,0,e);
 				}
 			}else{
-				e.gaitasunaBurutu(0,0,e);
+			e.gaitasunaBurutu(0,0,e);
 			}
 		}
 	}
