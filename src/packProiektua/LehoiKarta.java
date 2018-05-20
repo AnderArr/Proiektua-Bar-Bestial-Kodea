@@ -3,7 +3,7 @@ package packProiektua;
 public class LehoiKarta extends Karta{
 	
 	public LehoiKarta(String pKolorea){
-		super("Lehoia",12,false,pKolorea,"<html>Jokoan sartzean, ilaran<br> beste lehoirik ez badago,<br> lehendabizikoa kokatzen <br>da eta tximinoak kalera<br> botatzen ditu baina<br> beste lehoi bat<br> baldin badago karta<br> bera kalera doa.</html>",2);
+		super("Lehoia",12,false,pKolorea,"<html>Jokoan sartzean, ilaran<br> beste lehoirik ez badago,<br> lehendabizikoa kokatzen <br>da eta tximinoak kalera<br> botatzen ditu baina<br> beste lehoi bat<br> baldin badago karta<br> bera kalera doa.</html>",2,"C:/Kartak/Lehoi"+pKolorea+".png");
 		this.ia= new LehoiAnimalada();
 	}
 	
