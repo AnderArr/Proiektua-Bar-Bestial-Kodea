@@ -50,7 +50,7 @@ public class TximinoKartaTest {
 	public void testGaitasunaBurutu() {
 		//Proba karta bakarra.
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		kZ.kartaEzabatu(k5);
 		
@@ -58,7 +58,7 @@ public class TximinoKartaTest {
 		//Proba tximino bakarra
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k5));
 		kZ.kartaEzabatu(k1);
@@ -67,7 +67,7 @@ public class TximinoKartaTest {
 		//Proba bi tximino
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
 		kZ.kartaEzabatu(k4);
@@ -78,7 +78,7 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k2));
 		assertTrue(kZ.getKarta(2).equals(k5));
@@ -91,7 +91,7 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
 		assertTrue(kZ.getKarta(2).equals(k1));
@@ -103,10 +103,10 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
-		assertNull(kZ.getKarta(2).equals(k2));
+		assertTrue(kZ.luzera()==2);
 		kZ.kartaEzabatu(k4);
 		kZ.kartaEzabatu(k5);
 		
@@ -114,10 +114,10 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
-		assertNull(kZ.getKarta(2).equals(k3));
+		assertTrue(kZ.luzera()==2);
 		kZ.kartaEzabatu(k4);
 		kZ.kartaEzabatu(k5);
 		
@@ -126,11 +126,11 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
 		assertTrue(kZ.getKarta(2).equals(k1));
-		assertNull(kZ.getKarta(2).equals(k2));
+		assertTrue(kZ.luzera()==3);
 		kZ.kartaEzabatu(k1);
 		kZ.kartaEzabatu(k4);
 		kZ.kartaEzabatu(k5);
@@ -139,11 +139,11 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
 		assertTrue(kZ.getKarta(2).equals(k1));
-		assertNull(kZ.getKarta(3).equals(k3));
+		assertTrue(kZ.luzera()==3);
 		kZ.kartaEzabatu(k1);
 		kZ.kartaEzabatu(k4);
 		kZ.kartaEzabatu(k5);
@@ -152,11 +152,10 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
-		assertNull(kZ.getKarta(2).equals(k2));
-		assertNull(kZ.getKarta(3).equals(k3));
+		assertTrue(kZ.luzera()==2);
 		kZ.kartaEzabatu(k4);
 		kZ.kartaEzabatu(k5);
 		
@@ -166,11 +165,10 @@ public class TximinoKartaTest {
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
-		assertNull(kZ.getKarta(2).equals(k2));
-		assertNull(kZ.getKarta(3).equals(k3));
+		assertTrue(kZ.luzera()==3);
 		assertTrue(kZ.getKarta(2).equals(k1));
 		kZ.kartaEzabatu(k1);
 		kZ.kartaEzabatu(k4);
