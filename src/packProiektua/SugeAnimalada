@@ -3,7 +3,7 @@ package packProiektua;
 public class SugeAnimalada implements InterfaceAnimalada {
 
 	public SugeAnimalada(){}
-	
+	@Override
 	public void gaitasunaBurutu(int a, int b,Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ = t.getKola();
