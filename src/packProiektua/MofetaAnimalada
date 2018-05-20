@@ -7,17 +7,17 @@ public class MofetaAnimalada implements InterfaceAnimalada {
 	public void gaitasunaBurutu(int a, int b,Karta k) {
 		Tableroa t= Tableroa.getNireTableroa();
 		KartaZerrenda kZ=t.getKola();
-		if ((kZ.luzera()>=2) && (!kZ.getKarta(0).getIzena().equals(k.izena))){
+		if ((kZ.luzera()>=2) && (!kZ.getKarta(0).getIzena().equals(k.getIzena()))){
 			Karta k1=null;
 			k1=kZ.getKarta(0);
-			if ((kZ.luzera()>=3) && (!kZ.getKarta(1).getIzena().equals(k.izena))){
+			if ((kZ.luzera()>=3) && (!kZ.getKarta(1).getIzena().equals(k.getIzena()))){
 				Karta k2=null;
 				k2=kZ.getKarta(1);
 				if (kZ.luzera()>=4){
 					Karta aux=null;
 					Karta k3=null;
 					Karta k4=null;
-					if (k1.getBalioa()>k2.getBalioa()){
+					if (k1.getZenbakia()<k2.getZenbakia()){
 						aux=k1;
 						k1=k2;
 						k2=aux;
