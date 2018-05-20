@@ -50,14 +50,14 @@ public class FokaKartaTest {
 	public void testGaitasunaBurutu() {
 		//Proba karta bakarra.
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		kZ.kartaEzabatu(k5);
 		
 		//Proba 2 karta.
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k1));
 		kZ.kartaEzabatu(k1);
@@ -67,7 +67,7 @@ public class FokaKartaTest {
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k2));
 		assertTrue(kZ.getKarta(2).equals(k1));
@@ -80,7 +80,7 @@ public class FokaKartaTest {
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k3));
 		assertTrue(kZ.getKarta(2).equals(k2));
@@ -96,7 +96,7 @@ public class FokaKartaTest {
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.getKarta(1).equals(k4));
 		assertTrue(kZ.getKarta(2).equals(k3));
