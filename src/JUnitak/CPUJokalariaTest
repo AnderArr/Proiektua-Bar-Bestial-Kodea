@@ -1,0 +1,72 @@
+package JUnitak;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import packProiektua.CPUJokalaria;
+import packProiektua.Karta;
+import packProiektua.KartaFactory;
+import packProiektua.KartaZerrenda;
+import packProiektua.Tableroa;
+
+public class CPUJokalariaTest {
+	private Tableroa t;
+	private CPUJokalaria CPU;
+
+	@Before
+	public void setUp() throws Exception {
+		t=Tableroa.getNireTableroa();
+		t.jokoaHasieratu();
+		CPU=new CPUJokalaria();
+		CPU.jokalariaHasieratu("Berdea");
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		t=null;
+		CPU=null;
+	}
+
+	@Test
+	public void testKartaMahairaBota() {
+		CPU.kartaMahairaBota();
+		assertTrue(t.getKola().luzera()==1);
+		
+	}
+
+	@Test
+	public void testJokalariaHasieratu() {
+		CPUJokalaria PUZ = new CPUJokalaria();
+		PUZ.jokalariaHasieratu("Gorria");
+		assertTrue(PUZ.getEskuan().luzera()==4);
+		assertTrue(PUZ.getBaraja().luzera()==8);
+	}
+
+	@Test
+	public void testKartaBarajatikHartu() {
+		assertTrue(CPU.getEskuan().luzera()==4);
+		assertTrue(CPU.getBaraja().luzera()==8);
+		CPU.kartaBarajatikHartu();
+		assertTrue(CPU.getEskuan().luzera()==5);
+		assertTrue(CPU.getBaraja().luzera()==7);
+		CPU.kartaBarajatikHartu();
+		assertTrue(CPU.getEskuan().luzera()==6);
+		assertTrue(CPU.getBaraja().luzera()==6);
+	}
+
+	@Test
+	public void testKartakGeratuBarajan() {
+		assertTrue(CPU.getEskuan().luzera()==4);
+		assertTrue(CPU.getBaraja().luzera()==8);
+		assertTrue(CPU.kartakGeratuBarajan());
+		for(int i=0; i<8; i++){
+			CPU.kartaBarajatikHartu();
+		}
+		assertFalse(CPU.kartakGeratuBarajan());
+	}
+
+}
