@@ -50,28 +50,25 @@ public class KrokodiloKartaTest {
 	public void testGaitasunaBurutu() {
 		//Proba karta bakarra.
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		kZ.kartaEzabatu(k5);
 		
 		//Proba 2 karta.
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
 		assertTrue(kZ.luzera()==1);
-		assertNull(kZ.getKarta(1).equals(k1));
 		kZ.kartaEzabatu(k5);
 		
 		//Proba 3 karta.
 		kZ.kartaGehitu(k1);
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k5));
-		assertTrue(kZ.luzera()==2);
-		assertNull(kZ.getKarta(1).equals(k1));
-		assertNull(kZ.getKarta(2).equals(k2));
+		assertTrue(kZ.luzera()==1);
 		kZ.kartaEzabatu(k5);
 		
 		//Ezin du aurrera jarraitu
@@ -79,7 +76,7 @@ public class KrokodiloKartaTest {
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k3);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k2));
 		assertTrue(kZ.getKarta(2).equals(k3));
@@ -94,7 +91,7 @@ public class KrokodiloKartaTest {
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k2));
 		assertTrue(kZ.getKarta(2).equals(k4));
@@ -110,12 +107,11 @@ public class KrokodiloKartaTest {
 		kZ.kartaGehitu(k4);
 		kZ.kartaGehitu(k2);
 		kZ.kartaGehitu(k5);
-		k5.gaitasunaBurutu(0);
+		k5.gaitasunaBurutu(0,0,k5);
 		assertTrue(kZ.getKarta(0).equals(k1));
 		assertTrue(kZ.getKarta(1).equals(k3));
 		assertTrue(kZ.getKarta(2).equals(k4));
 		assertTrue(kZ.getKarta(3).equals(k5));
-		assertNull(kZ.getKarta(4).equals(k2));
 		assertTrue(kZ.luzera()==4);
 		kZ.kartaEzabatu(k1);
 		kZ.kartaEzabatu(k3);
