@@ -3,11 +3,16 @@ package packProiektua;
 public class KamalehoiAnimalada implements InterfaceAnimalada {
 
 	public KamalehoiAnimalada(){}
-
+	@Override
 	public void gaitasunaBurutu(int pos, int b,Karta k) {
 		Tableroa t =  Tableroa . getNireTableroa ();
 		Karta aux=t.getKola().getKarta(pos);
 		t.getKola().kartaEzabatu(k);
+		/*t.getKola().kartaEzabatu(k);
+		k.setZenbakia(aux.getZenbakia());
+		
+		aux.gaitasunaBurutu(0,k);
+		t.getKola().kamalehoiZenbakia();*/
 		if(!(aux instanceof KamalehoiKarta)){
 			Karta aux2=KartaFactory.getKartaFactory().createKarta(aux.getIzena(), aux.getKolorea());
 			t.getKola().kartaGehitu(aux2);
